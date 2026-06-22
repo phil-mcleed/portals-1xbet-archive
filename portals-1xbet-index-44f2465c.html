@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于 1xbet 站点介绍与可信说明</title>
+  <style>
+    /* 基础重置与排版 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Georgia', 'Times New Roman', '宋体', serif;
+      background: #f8f6f0;
+      color: #2f2e2b;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #fefcf7;
+      border-radius: 24px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.04);
+      padding: 3rem 2.5rem;
+    }
+
+    /* 主视觉区 — 柔和但明确的视觉锚点 */
+    .hero {
+      text-align: center;
+      padding: 2rem 0 2.5rem 0;
+      border-bottom: 1px solid #e2ddd4;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #2f2e2b;
+      margin-bottom: 0.5rem;
+    }
+    .hero .subhead {
+      font-size: 1.1rem;
+      color: #7b766e;
+      font-style: italic;
+      max-width: 480px;
+      margin: 0.5rem auto 0;
+    }
+
+    /* 文章主体段落 */
+    .intro-text {
+      margin: 2.2rem 0 1.8rem 0;
+      font-size: 1.05rem;
+    }
+    .intro-text p {
+      margin-bottom: 1.4rem;
+    }
+    .intro-text a {
+      color: #8b6f4c;
+      text-decoration: none;
+      border-bottom: 1px solid #dacbb8;
+      transition: border-color 0.15s;
+    }
+    .intro-text a:hover {
+      border-bottom-color: #8b6f4c;
+    }
+
+    /* 用途卡片区域 — 两张卡片并排 */
+    .cards-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin: 2.5rem 0 2.2rem 0;
+    }
+    .card {
+      flex: 1 1 240px;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.6rem 1.6rem 1.6rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+      border: 1px solid #ece7e0;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #4a433b;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.8rem;
+      border-left: 3px solid #c4b5a0;
+      padding-left: 0.75rem;
+    }
+    .card p {
+      color: #5c5650;
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    /* 适合人群 — 引用块形式 */
+    .audience-block {
+      background: #f3efe9;
+      border-left: 5px solid #c4b5a0;
+      padding: 1.6rem 2rem 1.6rem 2rem;
+      border-radius: 0 16px 16px 0;
+      margin: 2rem 0 2rem 0;
+    }
+    .audience-block h2 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #3d3832;
+      margin-bottom: 0.6rem;
+    }
+    .audience-block ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .audience-block li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.5rem;
+      position: relative;
+      color: #4c463f;
+    }
+    .audience-block li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #a39481;
+    }
+
+    /* 提示框 / 说明 */
+    .notice {
+      background: #faf7f1;
+      border: 1px solid #e2dad0;
+      border-radius: 18px;
+      padding: 1.5rem 1.8rem;
+      margin: 2rem 0 2.2rem 0;
+      font-size: 0.96rem;
+      color: #555049;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+    }
+    .notice strong {
+      color: #3d3630;
+      font-weight: 500;
+    }
+
+    /* FAQ 摘要 — 简洁的条目 */
+    .faq-summary {
+      margin-top: 2.5rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e2ddd4;
+    }
+    .faq-summary h3 {
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      color: #423d37;
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-item .q {
+      font-weight: 500;
+      color: #4f4942;
+    }
+    .faq-item .a {
+      margin-left: 1.2rem;
+      color: #6b655c;
+      font-size: 0.96rem;
+    }
+    .faq-item .a a {
+      color: #8b6f4c;
+      border-bottom: 1px solid #dacbb8;
+      text-decoration: none;
+    }
+    .faq-item .a a:hover {
+      border-bottom-color: #7a5f40;
+    }
+
+    /* 页脚 */
+    .footer-note {
+      margin-top: 2.8rem;
+      text-align: center;
+      font-size: 0.88rem;
+      color: #9c968c;
+      border-top: 1px solid #eae4db;
+      padding-top: 1.8rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .page-wrap {
+        padding: 2rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .cards-grid {
+        flex-direction: column;
+      }
+      .audience-block {
+        padding: 1.3rem 1.2rem;
+      }
+      .notice {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+  
+  <!-- 主视觉 -->
+  <section class="hero">
+    <h1>1xbet · 站点介绍</h1>
+    <div class="subhead">一个关于入口与可信说明的笔记</div>
+  </section>
+
+  <!-- 介绍与可信说明段落 -->
+  <div class="intro-text">
+    <p>
+      很多时候，我们进入一个线上服务，首先想确认它是否可靠、路径是否清晰。<strong>1xbet</strong> 作为近年逐渐被更多用户关注的平台，其官方网站的指向性一直是访问者关心的细节之一。下面从站点定位、用途和访问逻辑的角度，做一点克制的叙述。
+    </p>
+    <p>
+      这个门户站点的核心作用是提供指向性信息——即当你想了解 <a href="https://portals-1xbet.com">1xbet</a> 时，可以通过该页面获得基本的导航认知。它并非直接的服务平台，而更像一个信息中转或说明页。因此，理解它的用途和边界，对初次接触的人来说是有帮助的。
+    </p>
+  </div>
+
+  <!-- 用途卡片 2张 -->
+  <div class="cards-grid">
+    <div class="card">
+      <h3>信息索引</h3>
+      <p>汇集关于平台的基础说明、背景介绍以及相关须知，让访问者快速建立整体印象，减少盲目搜索带来的信息偏差。</p>
+    </div>
+    <div class="card">
+      <h3>访问引导</h3>
+      <p>提供清晰的指向性链接与说明，帮助有需求的用户找到正确的服务入口，同时避免误入仿冒或无关页面。</p>
+    </div>
+  </div>
+
+  <!-- 适合人群：引用块 -->
+  <div class="audience-block">
+    <h2>适合哪些人阅读</h2>
+    <ul>
+      <li>希望了解 <strong>1xbet</strong> 基本背景的新用户</li>
+      <li>需要确认官方入口的现有用户</li>
+      <li>对平台可信度与信息透明度有要求的使用者</li>
+      <li>只是路过、但想简单了解站点性质的浏览者</li>
+    </ul>
+  </div>
+
+  <!-- 提示框：关于可信与使用说明 -->
+  <div class="notice">
+    <strong>说明：</strong> 本页面仅作为介绍与指引用途，不提供任何账户注册、充值或下注服务。所有外部链接均指向相关方运营的网站，建议在访问前确认网络环境与当地法规。保持审慎，始终是好的习惯。
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-summary">
+    <h3>你可能想问</h3>
+    <div class="faq-item">
+      <div class="q">— 这个页面和 1xbet 是什么关系？</div>
+      <div class="a">这是关于 <a href="https://portals-1xbet.com">1xbet</a> 的介绍性页面，提供指向官网的入口及相关说明，本身不托管核心业务。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">— 链接是否安全？</div>
+      <div class="a">页面中出现的链接直接指向 portals-1xbet.com，你可以自行判断与验证。任何情况下都建议核对域名再操作。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">— 我能在这里获得客户支持吗？</div>
+      <div class="a">不能。本页面仅为信息卡片式介绍，不提供客服或技术支持。如有需要请通过官网渠道联系。</div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <div class="footer-note">
+    <span>仅作为站点说明与可信参考 · 内容更新于最近一次整理</span>
+  </div>
+</div>
+</body>
+</html>
