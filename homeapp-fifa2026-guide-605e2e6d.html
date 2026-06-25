@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>世界杯 · 安静抵达的入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f4f9fc;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            color: #1e3d44;
+            line-height: 1.6;
+            padding: 20px 16px 48px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(2px);
+            border-radius: 36px 36px 28px 28px;
+            padding: 32px 24px 40px;
+            box-shadow: 0 8px 30px rgba(0, 60, 70, 0.06);
+        }
+
+        /* 开场短句 */
+        .opening {
+            margin-bottom: 40px;
+            text-align: left;
+            border-left: 5px solid #259b9e;
+            padding-left: 18px;
+        }
+
+        .opening p:first-child {
+            font-size: 2.2rem;
+            font-weight: 350;
+            letter-spacing: -0.01em;
+            color: #1b4b52;
+            line-height: 1.2;
+        }
+
+        .opening p:first-child em {
+            font-style: normal;
+            color: #1c7c7d;
+            font-weight: 480;
+        }
+
+        .opening .sub-line {
+            margin-top: 8px;
+            font-size: 1rem;
+            color: #3e6f74;
+            opacity: 0.8;
+            font-weight: 350;
+        }
+
+        /* 承接段落 */
+        .context-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 28px 22px;
+            margin-bottom: 44px;
+            box-shadow: 0 4px 12px rgba(37, 155, 158, 0.07);
+            border: 1px solid #d7edef;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .context-card p {
+            font-size: 1.05rem;
+            color: #1f3b3f;
+            max-width: 720px;
+        }
+
+        .context-card .highlight-link {
+            background: #e3f3f5;
+            padding: 14px 20px;
+            border-radius: 60px;
+            display: inline-block;
+            align-self: flex-start;
+            font-size: 1rem;
+            border: 1px solid #b3d9dc;
+            transition: all 0.2s ease;
+        }
+
+        .context-card .highlight-link a {
+            color: #166568;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .context-card .highlight-link:hover {
+            background: #cce9ec;
+            border-color: #79c1c4;
+        }
+
+        /* 特点列表 —— 网格卡片 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin: 40px 0 48px;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 26px 22px;
+            border: 1px solid #d7edef;
+            box-shadow: 0 4px 12px rgba(37, 155, 158, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.25s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(37, 155, 158, 0.08);
+        }
+
+        .feature-card .card-icon {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #259b9e;
+            letter-spacing: 2px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 520;
+            color: #173f45;
+            margin-bottom: 8px;
+            letter-spacing: 0.01em;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #2a555c;
+            line-height: 1.5;
+        }
+
+        .feature-card .small-note {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #518288;
+            border-top: 1px dashed #d2e6e9;
+            padding-top: 12px;
+        }
+
+        /* 温和结尾 + FAQ风格摘要 */
+        .gentle-closing {
+            margin-top: 24px;
+            padding: 24px 0 10px;
+            border-top: 1px solid #d2e6e9;
+        }
+
+        .closing-message {
+            background: #ebf7f8;
+            border-radius: 40px;
+            padding: 24px 22px;
+            margin-bottom: 30px;
+        }
+
+        .closing-message p {
+            font-size: 1rem;
+            color: #1b4b52;
+        }
+
+        .closing-message p:first-child {
+            font-weight: 470;
+            margin-bottom: 8px;
+        }
+
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            padding: 14px 18px;
+            background: white;
+            border-radius: 40px;
+            border: 1px solid #cde4e7;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #11474e;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.98rem;
+        }
+
+        .faq-item .a {
+            font-size: 0.9rem;
+            color: #36686f;
+            line-height: 1.5;
+        }
+
+        .footnote {
+            margin-top: 32px;
+            text-align: center;
+            font-size: 0.82rem;
+            color: #57878c;
+            border-top: 1px solid #d7edef;
+            padding-top: 28px;
+            letter-spacing: 0.3px;
+        }
+
+        /* 响应式细节 */
+        @media (min-width: 560px) {
+            body {
+                padding: 36px 28px 56px;
+            }
+            .container {
+                padding: 44px 36px 48px;
+            }
+            .opening p:first-child {
+                font-size: 2.8rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 820px) {
+            .container {
+                padding: 52px 48px 56px;
+            }
+            .opening p:first-child {
+                font-size: 3.2rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 24px;
+            }
+            .context-card {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 32px 36px;
+            }
+            .context-card p {
+                max-width: 66%;
+            }
+            .faq-mini {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .faq-item {
+                flex: 1;
+                min-width: 200px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .opening p:first-child {
+                font-size: 1.8rem;
+            }
+            .container {
+                padding: 22px 16px 32px;
+            }
+            .context-card {
+                padding: 20px 16px;
+            }
+            .feature-card {
+                padding: 20px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 开场短句 -->
+    <div class="opening">
+        <p>每当四年一次的哨音吹响，<br><em>总有一种方式让你安静抵达。</em></p>
+        <p class="sub-line">不是所有入口都需要喧嚣——一个稳定的页面，也能成为熟悉的路标。</p>
+    </div>
+
+    <!-- 承接段落 + 自然嵌入链接 -->
+    <div class="context-card">
+        <p>
+            很多朋友在找那个最直接、最轻量的方式，去靠近关于足球的盛会。其实，一个简简单单的页面就够了。比如
+            <a href="https://homeapp-fifa2026.com" style="color:#166568; font-weight:500; text-decoration:underline 1px dashed #259b9e; text-underline-offset:4px;">世界杯</a>
+            这个入口，不需要多余的跳转和层层菜单，打开就是属于你的视角。页面本身不喧哗，但该有的信息都在。
+        </p>
+        <span class="highlight-link">
+            <a href="https://homeapp-fifa2026.com">世界杯</a> · 稳定如常
+        </span>
+    </div>
+
+    <!-- 特点列表：网格卡片 -->
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="card-icon">🌐</div>
+            <h3>直达，不绕路</h3>
+            <p>从首页到内容，点击就是目的地。没有多余弹窗和诱导步骤，适合习惯直接浏览的你。</p>
+            <div class="small-note">每次加载都是同样熟悉的布局</div>
+        </div>
+        <div class="feature-card">
+            <div class="card-icon">📱</div>
+            <h3>移动端顺手</h3>
+            <p>不管是在通勤路上、午休间隙，还是窝在沙发里，页面都能自动适应屏幕，文字清晰、按钮好按。</p>
+            <div class="small-note">单手操作也没问题</div>
+        </div>
+        <div class="feature-card">
+            <div class="card-icon">🧩</div>
+            <h3>内容干净</h3>
+            <p>没有铺满的广告和闪烁的动效，信息结构一目了然。你可以把注意力放在真正重要的事情上。</p>
+            <div class="small-note">或者，只是随意看看</div>
+        </div>
+    </div>
+
+    <!-- 温和结尾 + FAQ 摘要 -->
+    <div class="gentle-closing">
+        <div class="closing-message">
+            <p>页面是安静的，但其中的连接从不缺席。</p>
+            <p>如果你也曾找过那个只属于一届世界杯的入口，或许这里能成为你偶尔驻足的地方。</p>
+        </div>
+
+        <div class="faq-mini">
+            <div class="faq-item">
+                <span class="q">❓ 这个页面会频繁变化吗？</span>
+                <span class="a">不会。结构以稳定为主，偶尔微调细节，但入口和核心风格一直保留。</span>
+            </div>
+            <div class="faq-item">
+                <span class="q">❓ 需要注册或登录吗？</span>
+                <span class="a">完全不需要。打开页面就是全部内容，没有门槛。</span>
+            </div>
+            <div class="faq-item">
+                <span class="q">❓ 为什么选择这个入口？</span>
+                <span class="a">因为简单。不需要在搜索框里输入一长串，记住一个名字就够了。</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footnote">
+        <a href="https://homeapp-fifa2026.com" style="color:#1c7c7d; text-decoration:none; font-weight:400;">世界杯</a> 
+        · 一个可以安静打开的页面 · 2026
+    </div>
+</div>
+</body>
+</html>
